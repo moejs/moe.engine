@@ -3,7 +3,7 @@ var uuid = require("../utils/uuid");
 var _id = "__immutable_id__";
 
 function immutable(object) {
-  if(!object[_id]) {
+  if(!(_id in object)) {
     object[_id] = uuid();
   }
   return object;
