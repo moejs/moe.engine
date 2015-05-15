@@ -15,9 +15,9 @@ function uuid() {
   _array[12] = 4;
   _array[16] = _array[16] & 0b0011 | 0b1000;
   var index = 0;
-  return _template.replace(/0/g, () => {
-    return (_array[index++] & 0xf).toString(16);
-  });
+  return _template.replace(/0/g, () => (
+    (_array[index++] & 0xf).toString(16)
+  ));
 }
 
 module.exports = uuid;
